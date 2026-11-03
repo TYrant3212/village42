@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Подъяково Village — аренда дома посуточно в Подъяково</title>
+<meta name="description" content="Подъяково Village — дом посуточно в деревне Подъяково, Кемеровский район. Баня, камин, мангал. Звоните: 8 904 377-09-09">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --wood:#6b4726;
+    --wood-dark:#3d2814;
+    --warm:#c8894a;
+    --cream:#f7f1e6;
+    --text:#2b1d10;
+    --green:#4a6741;
+  }
+  body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color:var(--text);
+    background:var(--cream);
+    line-height:1.6;
+  }
+  .wrap{max-width:1180px; margin:0 auto; padding:0 20px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:44vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    background:linear-gradient(rgba(30,18,8,.55), rgba(30,18,8,.75)),
+      url("img/03-fasad-dom22-noch-web.jpg") center/cover no-repeat;
+  }
+  .hero-inner{padding:36px 20px; max-width:820px;}
+  .hero h1{
+    font-size:clamp(2rem, 5.5vw, 3.6rem);
+    font-weight:800;
+    letter-spacing:-.02em;
+    margin-bottom:18px;
+    text-shadow:0 3px 20px rgba(0,0,0,.5);
+  }
+  .hero p{
+    font-size:clamp(1.05rem, 2.2vw, 1.4rem);
+    margin-bottom:32px;
+    opacity:.95;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--warm);
+    color:#3d2814;
+    font-weight:800;
+    font-size:1.15rem;
+    padding:18px 38px;
+    border-radius:60px;
+    text-decoration:none;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px); box-shadow:0 14px 36px rgba(0,0,0,.45);}
+  .btn svg{width:22px;height:22px;}
+
+  /* STRIP */
+  .strip{
+    background:var(--wood-dark);
+    color:#f7f1e6;
+    padding:20px 0;
+  }
+  .strip ul{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px 44px;
+    font-size:1.02rem;
+  }
+  .strip li{display:flex; align-items:center; gap:9px;}
+  .strip b{color:var(--warm);}
+
+  /* SECTIONS */
+  section{padding:80px 0;}
+  .section-title{
+    font-size:clamp(1.6rem, 3.6vw, 2.4rem);
+    font-weight:800;
+    margin-bottom:14px;
+    letter-spacing:-.01em;
+  }
+  .section-sub{font-size:1.08rem; opacity:.75; margin-bottom:44px;}
+
+  /* ABOUT */
+  .about{background:#fff;}
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .about-grid img{
+    width:100%;
+    border-radius:16px;
+    box-shadow:0 20px 50px rgba(61,40,20,.22);
+  }
+  .about-text p{margin-bottom:16px; font-size:1.06rem;}
+  .feat{list-style:none; margin-top:24px;}
+  .feat li{
+    padding:11px 0 11px 34px;
+    position:relative;
+    border-bottom:1px solid #ece2d2;
+    font-size:1.02rem;
+  }
+  .feat li:before{
+    content:"";
+    position:absolute; left:0; top:19px;
+    width:16px; height:9px;
+    border-left:3px solid var(--green);
+    border-bottom:3px solid var(--green);
+    transform:rotate(-45deg);
+  }
+
+  /* GALLERY */
+  .gallery{background:var(--cream);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:18px;
+  }
+  .gallery-grid figure{
+    position:relative;
+    overflow:hidden;
+    border-radius:14px;
+    background:#e8ddcb;
+    box-shadow:0 8px 24px rgba(61,40,20,.13);
+  }
+  .gallery-grid img{
+    width:100%;
+    height:290px;
+    object-fit:cover;
+    display:block;
+    transition:transform .4s ease;
+  }
+  .gallery-grid figure:hover img{transform:scale(1.05);}
+  .gallery-grid figcaption{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    padding:26px 16px 13px;
+    background:linear-gradient(transparent, rgba(30,18,8,.82));
+    color:#fff;
+    font-size:.96rem;
+    font-weight:600;
+  }
+  .gallery-grid figure.wide{grid-column:span 2;}
+  .gallery-grid figure.wide img{height:290px;}
+
+  /* PRICE */
+  .price{background:#fff;}
+  .price-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:24px;
+    margin-bottom:44px;
+  }
+  .card{
+    background:var(--cream);
+    border-radius:16px;
+    padding:32px 28px;
+    border:1px solid #e8ddcb;
+  }
+  .card h3{
+    font-size:1.15rem;
+    margin-bottom:12px;
+    color:var(--wood);
+  }
+  .big{
+    font-size:2.3rem;
+    font-weight:800;
+    color:var(--wood-dark);
+    line-height:1.1;
+  }
+  .big span{font-size:1rem; font-weight:600; opacity:.65;}
+  .card ul{list-style:none; margin-top:16px;}
+  .card li{
+    padding:7px 0 7px 22px;
+    position:relative;
+    font-size:.98rem;
+  }
+  .card li:before{
+    content:"•";
+    position:absolute; left:6px;
+    color:var(--warm);
+    font-weight:800;
+  }
+  .note{
+    background:#fff8ec;
+    border-left:5px solid var(--warm);
+    padding:22px 26px;
+    border-radius:0 12px 12px 0;
+    font-size:1.02rem;
+  }
+
+  /* CTA */
+  .cta{
+    background:linear-gradient(rgba(45,28,12,.82), rgba(45,28,12,.9)),
+      url("img/05-gostinaya-kamin-web.jpg") center/cover no-repeat;
+    color:#fff;
+    text-align:center;
+    padding:90px 0;
+  }
+  .cta h2{
+    font-size:clamp(1.8rem,4vw,2.8rem);
+    font-weight:800;
+    margin-bottom:16px;
+  }
+  .cta p{font-size:1.15rem; opacity:.92; margin-bottom:34px;}
+
+  /* FOOTER */
+  footer{
+    background:var(--wood-dark);
+    color:#d9c9b3;
+    padding:44px 0;
+    font-size:.95rem;
+  }
+  footer a{color:var(--warm); text-decoration:none;}
+  .foot-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:24px;
+  }
+
+  /* FLOATING CALL */
+  .float-call{
+    position:fixed;
+    right:18px; bottom:18px;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--warm);
+    color:#3d2814;
+    padding:15px 24px;
+    border-radius:60px;
+    font-weight:800;
+    text-decoration:none;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    font-size:1.02rem;
+  }
+  .float-call svg{width:20px;height:20px;}
+
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr; gap:32px;}
+    .gallery-grid figure.wide{grid-column:span 1;}
+    section{padding:56px 0;}
+    .float-call{padding:13px 20px; font-size:.95rem;}
+  }
+</style>
+<link rel="stylesheet" href="extra.css">
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="snow" id="snow"></div>
+  <!-- Зимний лес: ёлки в снегу -->
+  <svg class="forest" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="treeG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#2c5140"/>
+        <stop offset="100%" stop-color="#16291f"/>
+      </linearGradient>
+      <linearGradient id="snowG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#e3eef0"/>
+      </linearGradient>
+    </defs>
+
+    <!-- дальний ряд ёлок -->
+    <g fill="#20372b" opacity=".55">
+      <path d="M60 200 L86 96 L112 200 Z"/>
+      <path d="M150 200 L178 78 L206 200 Z"/>
+      <path d="M255 200 L280 108 L305 200 Z"/>
+      <path d="M360 200 L390 70 L420 200 Z"/>
+      <path d="M470 200 L496 112 L522 200 Z"/>
+      <path d="M575 200 L604 84 L633 200 Z"/>
+      <path d="M690 200 L716 104 L742 200 Z"/>
+      <path d="M800 200 L830 74 L860 200 Z"/>
+      <path d="M910 200 L936 110 L962 200 Z"/>
+      <path d="M1020 200 L1050 82 L1080 200 Z"/>
+      <path d="M1120 200 L1146 106 L1172 200 Z"/>
+    </g>
+
+    <!-- ближний ряд ёлок с снегом -->
+    <g>
+      <g transform="translate(90,0)">
+        <path d="M0 200 L34 58 L68 200 Z" fill="url(#treeG)"/>
+        <path d="M8 150 L34 58 L60 150 Z" fill="url(#snowG)" opacity=".82"/>
+        <path d="M34 58 L26 92 L42 92 Z" fill="url(#snowG)" opacity=".9"/>
+      </g>
+      <g transform="translate(300,0)">
+        <path d="M0 200 L40 40 L80 200 Z" fill="url(#treeG)"/>
+        <path d="M10 146 L40 40 L70 146 Z" fill="url(#snowG)" opacity=".8"/>
+        <path d="M40 40 L30 82 L50 82 Z" fill="url(#snowG)" opacity=".9"/>
+      </g>
+      <g transform="translate(520,0)">
+        <path d="M0 200 L30 68 L60 200 Z" fill="url(#treeG)"/>
+        <path d="M7 152 L30 68 L53 152 Z" fill="url(#snowG)" opacity=".8"/>
+      </g>
+      <g transform="translate(700,0)">
+        <path d="M0 200 L44 34 L88 200 Z" fill="url(#treeG)"/>
+        <path d="M11 144 L44 34 L77 144 Z" fill="url(#snowG)" opacity=".82"/>
+        <path d="M44 34 L33 80 L55 80 Z" fill="url(#snowG)" opacity=".92"/>
+      </g>
+      <g transform="translate(920,0)">
+        <path d="M0 200 L36 52 L72 200 Z" fill="url(#treeG)"/>
+        <path d="M9 148 L36 52 L63 148 Z" fill="url(#snowG)" opacity=".8"/>
+      </g>
+      <g transform="translate(1100,0)">
+        <path d="M0 200 L32 64 L64 200 Z" fill="url(#treeG)"/>
+        <path d="M8 152 L32 64 L56 152 Z" fill="url(#snowG)" opacity=".8"/>
+      </g>
+    </g>
+
+    <!-- сугробы -->
+    <path d="M0 200 Q120 162 250 186 Q380 208 520 174 Q660 140 800 180 Q940 214 1060 178 Q1140 156 1200 190 L1200 200 Z" fill="url(#snowG)" opacity=".95"/>
+  </svg>
+
+
+
+
+  <div class="hero-inner">
+    <div style="font-size:.9rem; letter-spacing:.28em; text-transform:uppercase; opacity:.85; margin-bottom:18px; font-weight:700;">Кемеровский район · деревня Подъяково</div>
+    <h1>Подъяково Village</h1>
+  </div>
+</header>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <ul>
+      <li><b>Уютный дом с камином</b></li>
+      <li><b>Русская баня</b></li>
+      <li><b>Беседка и мангал</b></li>
+      <li><b>Wi-Fi</b></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">Дом, в который хочется вернуться</h2>
+        <p>Деревянный дом в деревне Подъяково, Кемеровский район. Сдаём посуточно — для семьи, компании друзей, выходных на природе или праздника.</p>
+        <p>Внутри тепло и по-домашнему: деревянные стены, кирпичный камин с гирляндой, большой стол в общей комнате. Снаружи — баня, мангал, двор и чистый воздух.</p>
+        <ul class="feat">
+          <li>До 10 спальных мест</li>
+          <li>Три комнаты: спальни и общая гостиная с камином</li>
+          <li>Настоящая русская баня</li>
+          <li>В летнее время бассейн – джакузи</li>
+          <li>Мангал и зона отдыха во дворе</li>
+          <li>Постельное бельё, посуда, Wi-Fi</li>
+          <li>Асфальтированная дорога до самого дома, остановка рядом</li>
+          <li>28 км до центра Кемерова — 30–40 минут на машине</li>
+        </ul>
+      </div>
+      <div>
+        <img src="img/05-gostinaya-kamin-web.jpg" alt="Гостиная с камином">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="wrap">
+    <h2 class="section-title">Фотографии</h2>
+    <p class="section-sub">Как выглядит дом внутри и снаружи</p>
+    <div class="gallery-grid">
+      <figure class="wide">
+        <img src="img/02-fasad-dom22-den-8mest.jpg" alt="Фасад дома днём">
+        <figcaption>Дом днём — свой двор, парковка</figcaption>
+      </figure>
+      <figure>
+        <img src="img/04-spalnya-web.jpg" alt="Спальня">
+        <figcaption>Спальня — деревянные стены, тёплый свет</figcaption>
+      </figure>
+      <figure>
+        <img src="img/05-gostinaya-kamin-web.jpg" alt="Гостиная с камином">
+        <figcaption>Гостиная с кирпичным камином</figcaption>
+      </figure>
+      <figure>
+        <img src="img/07-banya-web.jpg" alt="Баня">
+        <figcaption>Баня — парная с полками из липы</figcaption>
+      </figure>
+      <figure>
+        <img src="img/11-banya-2-web.jpg" alt="Парная">
+        <figcaption>Парная — тёплый свет, чистые полки</figcaption>
+      </figure>
+      <figure>
+        <img src="img/08-komnata-stol-drova-web.jpg" alt="Комната с большим столом">
+        <figcaption>Большой стол — для компании</figcaption>
+      </figure>
+      <figure>
+        <img src="img/01-komnata-elka-web.jpg" alt="Комната с ёлкой">
+        <figcaption>Уютная комната — зимой с ёлкой</figcaption>
+      </figure>
+      <figure>
+        <img src="img/09-fasad-dom23-den.jpg" alt="Дом с крыльцом">
+        <figcaption>Крыльцо и терраса</figcaption>
+      </figure>
+      <figure>
+        <img src="img/03-fasad-dom22-noch-web.jpg" alt="Дом ночью с гирляндами">
+        <figcaption>Дом вечером — с гирляндами</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="price">
+  <div class="wrap">
+    <h2 class="section-title">Цены и условия</h2>
+    <p class="section-sub">Честно, без сюрпризов при заселении</p>
+    <div class="price-grid">
+      <div class="card">
+        <h3>Аренда дома</h3>
+        <div class="big">7 500 ₽<span> / сутки</span></div>
+        <p style="margin:8px 0 0; font-weight:700; color:#4a6b4f;">в будние дни</p>
+        <ul>
+          <li>10 000 ₽ / сутки в выходные</li>
+          <li>Заезд после 14:00</li>
+          <li>Выезд до 11:00</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Баня</h3>
+        <div class="big">4 000 ₽<span> / 6 часов</span></div>
+        <ul>
+          <li>Настоящая парная</li>
+          <li>Дрова в стоимость включены</li>
+          <li>Веники оплачиваются отдельно</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Залог</h3>
+        <div class="big">10 000 ₽</div>
+        <ul>
+          <li>Возвращается при выезде</li>
+          <li>Принимаем наличные и перевод</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin:52px 0 10px; font-size:1.5rem; color:var(--wood-dark);">Дополнительные услуги</h3>
+    <p class="section-sub" style="margin-bottom:24px;">Заказываются отдельно, по желанию</p>
+    <div class="price-grid">
+      <div class="card extra">
+        <h3>Мангал и дрова для шашлыка</h3>
+        <div class="big">500 ₽</div>
+        <ul><li>Мангал, шампуры, дрова</li></ul>
+      </div>
+      <div class="card extra">
+        <h3>Веники для бани</h3>
+        <div class="big">500 ₽</div>
+        <ul><li>Берёзовые или дубовые</li></ul>
+      </div>
+      <div class="card extra">
+        <h3>Ранний заезд</h3>
+        <div class="big">по договорённости</div>
+        <ul><li>Если дом свободен</li></ul>
+      </div>
+      <div class="card extra">
+        <h3>Поздний выезд</h3>
+        <div class="big">по договорённости</div>
+        <ul><li>Если не мешает следующей брони</li></ul>
+      </div>
+      <div class="card extra">
+        <h3>Дополнительное место</h3>
+        <div class="big">по договорённости</div>
+        <ul><li>Раскладушка, бельё</li></ul>
+      </div>
+      <div class="card extra">
+        <h3>Праздничное оформление</h3>
+        <div class="big">по договорённости</div>
+        <ul><li>Шарики, гирлянды, украшение зала</li></ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>Важно:</b> дети и животные — по договорённости. Свободные даты уточняйте по телефону — отвечаем быстро.
+      <div style="margin-top:18px;">
+        <a class="btn note-btn" href="tel:+79043770909">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          8 904 377-09-09
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- КАЛЕНДАРЬ -->
+<section class="calendar" id="dates" style="background:var(--cream);">
+  <div class="wrap">
+    <h2 class="section-title">Свободные даты</h2>
+    <p class="section-sub">Зелёные — свободно, можно бронировать. Красные — уже заняты</p>
+    <div class="calendar-wrap">
+      <div class="cal-head">
+        <div class="cal-month" id="calMonth">—</div>
+        <div class="cal-nav">
+          <button type="button" id="calPrev" aria-label="Предыдущий месяц">‹</button>
+          <button type="button" id="calNext" aria-label="Следующий месяц">›</button>
+        </div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <span><i class="legend-dot free"></i> свободно</span>
+        <span><i class="legend-dot busy"></i> занято</span>
+      </div>
+      <div class="cal-hint" id="calHint">
+        Нажмите на свободную дату — откроется звонок. Подтвердим бронь за пару минут.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <h2 class="section-title">Связаться и забронировать</h2>
+    <p class="section-sub">Выберите удобный способ — ответим быстро</p>
+    <div class="contact-buttons">
+
+      <a class="cbtn cbtn-call" href="tel:+79043770909">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Позвонить<small>8 904 377-09-09</small></span>
+      </a>
+
+      <a class="cbtn cbtn-max" href="https://max.ru/u/se14824664_bot" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span>Написать в MAX<small>ответим в мессенджере</small></span>
+      </a>
+
+      <a class="cbtn cbtn-wa" href="https://wa.me/79043770909?text=Здравствуйте!%20Хочу%20забронировать%20дом%20в%20Подъяково" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.59-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.44 4.43-9.87 9.88-9.87a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.98c0 5.44-4.43 9.88-9.87 9.88zM20.5 3.49A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.15 1.59 5.95L.06 24l6.31-1.65a11.85 11.85 0 0 0 5.67 1.44h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.44-8.41z"/></svg>
+        <span>WhatsApp<small>написать сообщение</small></span>
+      </a>
+
+      <a class="cbtn cbtn-mail" href="mailto:ekin1304@yandex.ru?subject=Бронь%20дома%20в%20Подъяково">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        <span>Электронная почта<small>написать письмо</small></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- АДРЕС И КАРТА -->
+<section class="address" id="address" style="background:#fff;">
+  <div class="wrap">
+    <h2 class="section-title">Где мы находимся</h2>
+    <p class="section-sub">Кемеровская область, Кемеровский район, деревня Подъяково, улица Сибирская, 22</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start;" class="addr-grid">
+      <div class="calendar-wrap" style="padding:32px;">
+        <h3 style="font-size:1.2rem; margin-bottom:14px; color:var(--wood);">Подъяково Village</h3>
+        <p style="margin-bottom:14px;">Кемеровская обл., Кемеровский муниципальный округ,<br>деревня Подъяково, Сибирская ул., 22</p>
+        <ul class="feat" style="margin-top:0;">
+          <li>28 км от центра Кемерова — 30–40 минут на машине</li>
+          <li>Асфальтированная дорога до самого дома</li>
+          <li>Остановка общественного транспорта рядом</li>
+          <li>Свой двор, парковка у дома</li>
+        </ul>
+        <a class="btn" style="margin-top:24px; font-size:1rem; padding:15px 30px;" href="tel:+79043770909">Позвонить и уточнить</a>
+      </div>
+      <div style="border-radius:18px; overflow:hidden; box-shadow:0 12px 36px rgba(61,40,20,.10); border:1px solid #ece2d2; min-height:380px;">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?text=Кемеровская%20область%2C%20Кемеровский%20район%2C%20деревня%20Подъяково%2C%20Сибирская%20улица%2C%2022&z=15"
+          width="100%" height="100%" style="border:0; min-height:380px; display:block;"
+          allowfullscreen loading="lazy" title="Карта: Подъяково, Сибирская 22"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ОТЗЫВЫ -->
+<section class="reviews" id="otzyvy">
+  <div class="wrap">
+    <h2 class="section-title">Отзывы гостей</h2>
+    <p class="section-sub">Что говорят те, кто уже отдыхал у нас</p>
+    <div class="rev-grid">
+
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Отдыхали семьёй на выходных. Дом тёплый, чистый, всё как на фото. Баня отличная — напарились от души. Хозяева на связи, встретили, всё показали.</p>
+        <div class="rev-author">— Елена, Кемерово</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Снимали дом на день рождения, было 9 человек — места хватило всем. Большой стол в общей комнате, камин, гирлянда. Гости до сих пор вспоминают.</p>
+        <div class="rev-author">— Дмитрий, Новокузнецк</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Приехали на пару дней отдохнуть от города. Тишина, воздух, асфальт до самого дома — не пришлось по грунтовке трястись. Обязательно вернёмся зимой.</p>
+        <div class="rev-author">— Анна, Кемерово</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Брали баню на 6 часов — дрова, пар, всё по-настоящему. Веники заказали на месте. После бани — мангал в беседке. Отличные выходные!</p>
+        <div class="rev-author">— Сергей, Кемеровский район</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Уютно, по-домашнему. Дети в восторге от ёлки и подарков. Всё аккуратно, бельё чистое, посуда есть. Спасибо за гостеприимство.</p>
+        <div class="rev-author">— Ольга, Кемерово</div>
+      </div>
+
+      <div class="rev-card rev-cta">
+        <div class="rev-cta-in">
+          <p>Отдыхали у нас? Расскажите, как всё прошло — это поможет другим гостям.</p>
+          <a class="btn" href="tel:+79043770909">Оставить отзыв</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Свободные даты — по звонку</h2>
+    <p>Позвоните, чтобы забронировать дом или задать вопрос</p>
+    <a class="btn" href="tel:+79043770909">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      8 904 377-09-09
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER / РЕКВИЗИТЫ -->
+<footer>
+  <div class="wrap">
+
+    <div class="foot-grid">
+      <div>
+        <b>Подъяково Village</b><br><span style="opacity:.75; font-size:.9rem;">village42.ru</span><br>
+        Кемеровская обл., Кемеровский муниципальный округ,<br>
+        д. Подъяково, Сибирская ул., 22
+      </div>
+      <div>
+        <b>Реквизиты</b><br>
+        Самозанятый<br>
+        Тел.: <a href="tel:+79043770909">8 904 377-09-09</a><br>
+        ИНН: указать<br>
+        Электронная почта: <a href="mailto:ekin1304@yandex.ru">написать</a>
+      </div>
+      <div>
+        <b>Как добраться</b><br>
+        28 км до Кемерова<br>
+        Асфальт, остановка у дома
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="float-bar">
+  <a class="f-call" href="tel:+79043770909">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Позвонить
+  </a>
+  <a class="f-max" href="https://max.ru/u/se14824664_bot" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    MAX
+  </a>
+  <a class="f-wa" href="https://wa.me/79043770909?text=Здравствуйте!%20Хочу%20забронировать%20дом%20в%20Подъяково" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.59-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.44 4.43-9.87 9.88-9.87a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.98c0 5.44-4.43 9.88-9.87 9.88zM20.5 3.49A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.15 1.59 5.95L.06 24l6.31-1.65a11.85 11.85 0 0 0 5.67 1.44h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.44-8.41z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script src="calendar.js"></script>
+
+<!-- ПЛАВАЮЩИЕ КНОПКИ СПРАВА -->
+<nav class="side-social" aria-label="Связаться с нами">
+
+  <a class="s-call" href="tel:+79043770909" aria-label="Позвонить">
+    <span class="tip">Позвонить</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+
+  <a class="s-max" href="https://max.ru/u/se14824664_bot" target="_blank" rel="noopener" aria-label="Написать в MAX">
+    <span class="tip">MAX</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+
+  <a class="s-wa" href="https://wa.me/79043770909?text=Здравствуйте!%20Хочу%20забронировать%20дом%20в%20Подъяково" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+    <span class="tip">WhatsApp</span>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.59-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.44 4.43-9.87 9.88-9.87a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.98c0 5.44-4.43 9.88-9.87 9.88zM20.5 3.49A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.15 1.59 5.95L.06 24l6.31-1.65a11.85 11.85 0 0 0 5.67 1.44h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.44-8.41z"/></svg>
+  </a>
+
+  <a class="s-mail" href="mailto:ekin1304@yandex.ru?subject=Бронь%20дома%20в%20Подъяково" aria-label="Написать на почту">
+    <span class="tip">Почта</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+  </a>
+
+</nav>
+
+
+<script>
+/* Снег в шапке: 70 снежинок разного размера и скорости */
+(function(){
+  const box = document.getElementById('snow');
+  if(!box) return;
+  const N = 70;
+  let html = '';
+  for(let i=0;i<N;i++){
+    const size = (Math.random()*3.4+1.4).toFixed(1);
+    const left = (Math.random()*100).toFixed(2);
+    const dur  = (Math.random()*7+7).toFixed(1);
+    const del  = (Math.random()*10).toFixed(1);
+    const op   = (Math.random()*0.55+0.35).toFixed(2);
+    html += '<i style="width:'+size+'px;height:'+size+'px;left:'+left+'%;'
+          + 'animation-duration:'+dur+'s;animation-delay:-'+del+'s;opacity:'+op+';"></i>';
+  }
+  box.innerHTML = html;
+})();
+</script>
+
+</body>
+</html>
